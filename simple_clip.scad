@@ -45,7 +45,7 @@ module SimpleClip(length=50,width=10,min_width=-100,max_depth=10,min_depth=5,wal
         hull()
         {
             cylinder(r=max_depth/2,h=clip_width,center=true);
-            translate([clip_length-((max_depth+min_depth/2)),-(min_depth/2),0])
+            translate([clip_length-((max_depth+min_depth/2)),-((max_depth-min_depth)/2),0])
             {
                 cylinder(r=min_depth/2,h=clip_min,center=true);
             }
@@ -56,7 +56,7 @@ module SimpleClip(length=50,width=10,min_width=-100,max_depth=10,min_depth=5,wal
          //   translate([0,0,10])
             {
                 cylinder(r=(max_depth-wall-wall)/2,h=clip_width,center=true);
-                translate([clip_length-((max_depth+min_depth/2)),-(min_depth/2),0])
+                translate([clip_length-((max_depth+min_depth/2)),-((max_depth-min_depth)/2),0])
                 {
                     cylinder(r=(min_depth-wall*1.5)/2,h=clip_width,center=true);
                 }    
@@ -65,7 +65,7 @@ module SimpleClip(length=50,width=10,min_width=-100,max_depth=10,min_depth=5,wal
         
         hull()
         {
-            translate([clip_length-((max_depth+min_depth/2)),-(min_depth/2),0])
+            translate([clip_length-((max_depth+min_depth/2)),-((max_depth-min_depth)/2),0])
             {
                 rotate([0,0,30])
                 {
