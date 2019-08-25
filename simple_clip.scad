@@ -1,17 +1,32 @@
+/*
+||
+||  simple_clip
+||
+||  module for generating basic clips
+||
+||  Copyright (c) 2019 jason banks
+||
+||  Github project - https://github.com/jasonbanks/Clips
+*/
 
 
 
-SimpleClip(min_width=5,center=true,qual=60);
 
 
-module SimpleClip(length=50,width=10,min_width=-100,max_depth=10,min_depth=5,wall=2,center=false,qual=12)
+//SimpleClip(min_width=5,center=false,qual=12);
+
+
+module SimpleClip(length=50,width=10,min_width=-100,max_depth=10,min_depth=5,wall=2,center=false,qual=-1)
 {
     clip_length = length;
     clip_width = width;
     
     min_use = min_width==-100?width:min_width;
     
-    $fn=qual;
+    if (qual!=-1)
+    {
+        $fn=qual;
+    }
     
     if (center==true)
     {
