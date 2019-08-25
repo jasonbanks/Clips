@@ -1,0 +1,2 @@
+# Clips
+OpenScad Clip Library
